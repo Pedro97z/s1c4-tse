@@ -1,31 +1,29 @@
 <%- include('../partials/blank_header.ejs') %>
-<form class="form-signin" action="/login/access" method="post">
+<form class="form-signin" action="/login/reset" method="post">
   <h1 class="h3 mb-3 font-weight-normal">Bienvenido</h1>
   <input type="hidden" name="key" value="value">
   <span class="extraData"></span>
-  <!--USER -->
+  <!--EMAIL -->
   <label for="user" class="sr-only">User</label>
-  <input type="text" id="user" class="form-control" placeholder="Usuario" required="" autofocus="" name="user">
+  <input type="text" id="mail" class="form-control" placeholder="Correo" 
+  required="" autofocus="" name="mail">
   <!--CSRF -->
   <input type="hidden" name="<%= constants.csrf.key %>" value="<%= constants.csrf.secret %>">
-  <!--PASS -->
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="" name="password">
   <!--MESSAGE-->
   <p class="<%= message_color %> message" style="margin-top:10px;" id="login-message"><%= message %></p>
   <!--BUTTON -->
   <button class="btn btn-lg btn-primary btn-block" type="submit">
-    Ingresar
+    Mandar al correo
   </button>
   <!--FooTER LOGIN NAV -->
   <div class="link-login">
-    <a class="" href="/login/register">
+    <a class="" href="/login/signac_in">
       Registrarse
     </a>
     <a id="forgotpassword" class="pull-right" href="/login/reset_password">
       Olvidó su Contraseña
     </a>
   </div>
-  <p class="mt-5 mb-3 text-muted">Powered By <a href="http://softweb.pe/"> Softtware Web Perú</a> © 2017-2018</p>
+  <p class="mt-5 mb-3 text-muted">Powered By <a href="http://softweb.pe/"> Software Web Perú</a> © 2017-2018</p>
 </form>
 <%- include('../partials/blank_footer.ejs') %>

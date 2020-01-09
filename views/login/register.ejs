@@ -1,0 +1,28 @@
+<%- include('../partials/blank_header.ejs') %>
+<form class="form-signin" action="/login/access" method="post">
+  <h1 class="h3 mb-3 font-weight-normal">Formulario de Registro</h1>
+  <input type="hidden" name="key" value="value">
+  <span class="extraData"></span>
+  <!--NOMBRE -->
+  <label for="user" class="sr-only">Nombre</label>
+  <input type="text" id="nombre" class="form-control" placeholder="Nombre" 
+  required="" autofocus="" name="nombre">
+  <!--EMAIL -->
+  <label for="user" class="sr-only">Email</label>
+  <input type="text" id="email" class="form-control" placeholder="Email" 
+  required="" autofocus="" name="email">
+  <!--CSRF -->
+  <input type="hidden" name="<%= constants.csrf.key %>" value="<%= constants.csrf.secret %>">
+  <!--PASS -->
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" 
+  required="" name="password">
+  <!--MESSAGE-->
+  <p class="<%= message_color %> message" style="margin-top:10px;" id="login-message"><%= message %></p>
+  <!--BUTTON -->
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
+    Registrarme
+  </button>
+
+</form>
+<%- include('../partials/blank_footer.ejs') %>
